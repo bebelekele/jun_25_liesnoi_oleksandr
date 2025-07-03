@@ -1,0 +1,88 @@
+.person{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    transition: transform 1s ease;
+
+    &__photo{
+        position: relative;
+
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius: 200px;
+
+            transition: border-radius 1s ease;
+        }
+
+        .rank{
+            position: absolute;
+            display: flex;
+            top: 40%;
+            right: 5%;
+            justify-content: center;
+            align-items: center;
+            
+            width: 32px;
+            height: 32px;
+            background-color: #fff;
+            border-radius: 50%;
+
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 100%;
+            color: #8B0000;
+        }
+    }
+
+    &__details{
+        .name{
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 100%;
+            color: #2F4F4F;
+        }
+
+        .extra{
+            margin-top: 9px;
+            font-weight: 400;
+            font-size: 18px;
+            color: #000000;
+            padding-bottom: 6px;
+            opacity: 0;
+            .sport{
+                &::after{
+                    content: ', ';
+                }
+            }
+
+            .pay{
+                &::before{
+                    content: '$';
+                }
+
+                &::after{
+                    content: 'M';
+                }
+            }
+        }
+    }
+
+    &:hover{
+        border-radius: 12px;
+        z-index: 1;
+        transform: scale(125%);
+        background-color: #EEEEEE;
+        
+        img{
+            border-radius: 60px;
+            transition: border-radius 1s;
+        }
+
+        .extra{
+            opacity: 1;
+        }
+    }
+}
